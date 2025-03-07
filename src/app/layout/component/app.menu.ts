@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { AppMenuitem } from './app.menuitem';
+import { last } from 'rxjs';
 
 @Component({
     selector: 'app-menu',
@@ -20,6 +21,12 @@ export class AppMenu {
 
     ngOnInit() {
         this.model = [
+            {
+                label: 'Restaurante',
+                items: [{label: 'Ordenar', icon: '', routerLink: ['/ordenes/order']},
+                {label: 'test', icon: '', routerLink: ['/ordenes/ordertest']}],
+                
+            },
             {
                 label: 'Home',
                 items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
@@ -41,7 +48,8 @@ export class AppMenu {
                     { label: 'File', icon: 'pi pi-fw pi-file', routerLink: ['/uikit/file'] },
                     { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] },
                     { label: 'Timeline', icon: 'pi pi-fw pi-calendar', routerLink: ['/uikit/timeline'] },
-                    { label: 'Misc', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/misc'] }
+                    { label: 'Misc', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/misc'] },
+                    { label: 'Prueba', icon: 'pi pi-fw pi-circle', routerLink: ['/ikit/prueba'] }
                 ]
             },
             {
